@@ -10,13 +10,13 @@ class Block:
 		self.hash = self.hash_block()
 
 	def hash_block():
-		"""
-        generates a cryptographic hash of the block’s index, timestamp, data, and the hash of the previous block’s hash.
-        hash_block => '18627f84562249c397955a1bbde617992fea2180afe0e4645ea131df12051a20'
-        """
-        sha = hasher.sha256()
-        sha.update((str(self.index) +
-        			str(self.timestamp) +
-        			str(self.data) +
-        			str(self.previous_hash)).encode('utf-8'))
-        return sha.hexdigest()
+	"""
+    generates a cryptographic hash of the block’s index, timestamp, data, and the hash of the previous block’s hash.
+    hash_block => '18627f84562249c397955a1bbde617992fea2180afe0e4645ea131df12051a20'
+    """
+    sha = hasher.sha256()
+    sha.update((str(self.index) +
+    			str(self.timestamp) +
+    			str(self.data) +
+    			str(self.previous_hash)).encode('utf-8'))
+    return sha.hexdigest()
